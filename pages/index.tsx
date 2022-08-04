@@ -6,7 +6,7 @@ const postData = (data: RequestData) => fetch('/api/calculate-score', { method: 
 const Home: NextPage = () => {
   return (
     <div>
-      <button onClick={() => postData({ pins: 5 })}>Throw</button>
+      <button onClick={() => postData({ throws: [5] })}>Throw</button>
     </div>
   )
 }

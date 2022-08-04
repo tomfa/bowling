@@ -1,5 +1,6 @@
-import { RequestData, ResponseData } from "../types";
+import { RequestData, ResponseData, BowlingRound } from "../types";
 
 export const calculateScore = (input: RequestData): ResponseData => {
-  return { score: 5 }
-}
+  const rounds: BowlingRound[] = [];
+  return { rounds, totalScore: 0 };
+};

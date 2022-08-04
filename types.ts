@@ -1,2 +1,3 @@
-export type RequestData = { pins: number }
-export type ResponseData = { score: number }
+export type BowlingRound = { sum: number, first: number, second?: number }
+export type RequestData = { throws: number[] }
+export type ResponseData = { rounds: BowlingRound[], totalScore: number }
