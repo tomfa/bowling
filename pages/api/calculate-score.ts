@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { RequestData, ResponseData } from "../../types";
+import { calculateScore } from "../../lib/bowling";
 
 
 export default function handler(
@@ -14,6 +15,6 @@ export default function handler(
     return res.status(405).send({ 'error': 'invalid method'});
   }
   const data: RequestData = JSON.parse(req.body);
-  console.log('Received', data)
-  res.status(200).json({ data: { score: 0 } })
+  const response = calculateScore(data);
+  res.status(200).json({ data: response })
 }
